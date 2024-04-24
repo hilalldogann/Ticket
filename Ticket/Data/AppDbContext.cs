@@ -30,7 +30,7 @@ namespace Ticket.Data
 
         public DbSet<Actor_Activity> Actors_Activities{ get; set; }
 
-        public DbSet<Cinema> Cinema { get; set; }
+        public DbSet<Cinema> Cinemas { get; set; }
 
         public DbSet<Producer> Producers { get; set; }
 

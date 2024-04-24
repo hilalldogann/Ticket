@@ -6,11 +6,11 @@ namespace Ticket.Models
     {
         [Key]
         public int ActorId { get; set; }
-
+        [Display(Name = "ProfilePictureURL")]
         public string ProfilePictureURL { get; set; }
-
+        [Display(Name = "Name")]
         public string Name { get; set; }
-
+        [Display(Name="Biography")]
         public string Biography { get; set; }
 
         //relation
