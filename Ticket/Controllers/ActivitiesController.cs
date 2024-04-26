@@ -14,7 +14,7 @@ namespace Ticket.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var allActivities = await _context.Activities.ToListAsync();
+            var allActivities = await _context.Activities.Include(n=> n.Cinema).OrderBy(n=>n.Name).ToListAsync();
             return View(allActivities);
         }
     }
