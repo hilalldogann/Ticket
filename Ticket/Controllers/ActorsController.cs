@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Ticket.Data;
 using Ticket.Data.Services;
+using Ticket.Models;
 
 namespace Ticket.Controllers
 {
@@ -26,6 +27,17 @@ namespace Ticket.Controllers
             return View();
         }
 
+        [HttpPost]
 
+        public async Task<IActionResult> Create([Bind("name", "ProfilePictureURL", "Biography")]Actor actor)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+            _service.Add(actor);
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }
