@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Ticket.Data;
+using Ticket.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IActorsService, ActorsService>();
 
 // Add DbContext to the services.
 builder.Services.AddDbContext<AppDbContext>(options =>
