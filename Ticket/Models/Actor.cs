@@ -6,7 +6,7 @@ namespace Ticket.Models
     {
 
         [Key]
-        public int ActorId { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "Profile Picture")]
 

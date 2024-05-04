@@ -4,14 +4,14 @@ namespace Ticket.Data.Services
 {
     public interface IActorsService
     {
-        Task<IEnumerable<Actor>> GetAll();
-        Actor GetById(string id);
+        Task<IEnumerable<Actor>> GetAllAsync();
+        Task <Actor> GetByIdAsync(int id);
 
-        void Add(Actor actor);
+        Task AddAsync(Actor actor);
 
-        Actor Update(int id, Actor newActor);
+        Task <Actor> UpdateAsync(int id, Actor newActor);
 
         void Delete(int id);
-
+   
     }
 }

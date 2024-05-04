@@ -17,5 +17,8 @@ namespace Ticket.Controllers
             var allActivities = await _context.Activities.Include(n=> n.Cinema).OrderBy(n=>n.Name).ToListAsync();
             return View(allActivities);
         }
+
+
+
     }
 }

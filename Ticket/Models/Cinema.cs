@@ -9,8 +9,8 @@ namespace Ticket.Models
         [Display(Name = "Cinema Logo")]
         public string Logo { get; set; }
         [Display(Name = "Cinema Name")]
-        public string Name { get; set; }
-        [Display(Name = "Description")]
+       public string Name { get; set; }
+        [Display(Name = "De scription")]
         public string Description { get; set; }
 
         //relation
