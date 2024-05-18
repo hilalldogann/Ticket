@@ -88,12 +88,6 @@ namespace Ticket.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Details (int id)
-        {
-            var ActorDetails = _service.GetById(id.ToString());
-
-            if (ActorDetails == null) return View("Empty");
-            return View(ActorDetails);
-        }
+      
     }
 }

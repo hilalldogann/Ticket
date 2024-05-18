@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Ticket.Data.Base;
 
 namespace Ticket.Models
 {
-    public class Producer
+    public class Producer :IEntityBase
     {
         [Key]
         public int Id { get; set; }
