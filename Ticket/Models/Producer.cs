@@ -8,10 +8,13 @@ namespace Ticket.Models
         [Key]
         public int Id { get; set; }
         [Display(Name = "ProfilePictureURL")]
+        [Required(ErrorMessage ="Profile picture is required")]
         public string ProfilePictureURL { get; set; }
         [Display(Name = "Name")]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
         [Display(Name="Biography")]
+        [Required(ErrorMessage = "Biography is required")]
         public string Biography { get; set; }
 
         //relation

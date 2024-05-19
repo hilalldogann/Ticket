@@ -1,20 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Ticket.Data;
+using Ticket.Data.Services;
 
 namespace Ticket.Controllers
 {
     public class ActivitiesController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IActivitiesService _service;
 
-        public ActivitiesController(AppDbContext context)
-        {
-            _context = context;
+        public ActivitiesController(IActivitiesService service) 
+        { 
+            _service = service;
         }
         public async Task<IActionResult> Index()
         {
-            var allActivities = await _context.Activities.Include(n=> n.Cinema).OrderBy(n=>n.Name).ToListAsync();
+            var allActivities = await _service.GetAllAsync(n => n.Cinema);
             return View(allActivities);
         }
 

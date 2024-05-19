@@ -1,4 +1,5 @@
-﻿using Ticket.Models;
+﻿using System.Linq.Expressions;
+using Ticket.Models;
 
 namespace Ticket.Data.Base
 {
@@ -6,6 +7,7 @@ namespace Ticket.Data.Base
     {
 
         Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] IncludeProperties);
 
         Task<T> GetByIdAsync(int id);
 

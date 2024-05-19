@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Ticket.Data.Base;
 using Ticket.Data.Enums;
 
 namespace Ticket.Models
 {
-    public class Activity
+    public class Activity : IEntityBase
     {
         [Key]
         public int Id { get; set; }
