@@ -9,5 +9,9 @@ namespace Ticket.Data.Services
         Task<Activity> GetActivityByIdAsync(int id);
         Task<NewActivityDropdownsVM> GetNewActivityDropdownsValues();
 
+        Task AddNewActivityAsync(NewActivityVM data);
+
+        Task UpdateActivityAsync(NewActivityVM data);
+
     }
 }

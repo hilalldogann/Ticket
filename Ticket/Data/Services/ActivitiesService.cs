@@ -14,6 +14,37 @@ namespace Ticket.Data.Services
                 
         }
 
+       
+        public async Task AddNewActivityAsync(NewActivityVM data)
+        {
+            var newActivity = new Activity()
+            {
+                Name = data.Name,
+                Description = data.Description,
+                Price = data.Price,
+                ImageURL = data.ImageURL,
+                CinemaId = data.CinemaId,
+                StartDate = data.StartDate,
+                EndDate = data.EndDate,
+                ActivityCategory = data.ActivityCategory,
+                ProducerId = data.ProducerId
+            };
+            await _context.Activities.AddAsync(newActivity);
+            await _context.SaveChangesAsync();
+
+            //Add  Actors
+            foreach (var actorId in data.ActorIds)
+            {
+                var newActorActivity = new Actor_Activity()
+                {
+                    ActivityId = newActivity.Id,
+                    ActorId = actorId
+                };
+                await _context.Actors_Activities.AddAsync(newActorActivity);
+            }
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<Activity> GetActivityByIdAsync(int id)
         {
             var activityDetails = await _context.Activities
@@ -24,9 +55,52 @@ namespace Ticket.Data.Services
             return activityDetails;
         }
 
-        public Task<NewActivityDropdownsVM> GetNewActivityDropdownsValues()
+        public async Task<NewActivityDropdownsVM> GetNewActivityDropdownsValues()
         {
-            throw new NotImplementedException();
+            var response = new NewActivityDropdownsVM()
+            {
+                Actors = await _context.Actors.OrderBy(n => n.Name).ToListAsync(),
+                Cinemas = await _context.Cinemas.OrderBy(n => n.Name).ToListAsync(),
+                Producers= await _context.Producers.OrderBy(n => n.Name).ToListAsync(),
+
+            };
+            return response;
+        }
+
+        public async Task UpdateActivityAsync(NewActivityVM data)
+        {
+            var dbActivity = await _context.Activities.FirstOrDefaultAsync(n => n.Id == data.Id);
+
+            if (dbActivity != null)
+
+            {
+                dbActivity.Name = data.Name;
+                dbActivity.Description = data.Description;
+                dbActivity.Price = data.Price;
+                dbActivity.ImageURL = data.ImageURL;
+                dbActivity.CinemaId = data.CinemaId;
+                dbActivity.StartDate = data.StartDate;
+                dbActivity.EndDate = data.EndDate;
+                dbActivity.ActivityCategory = data.ActivityCategory;
+                dbActivity.ProducerId = data.ProducerId;
+                await _context.SaveChangesAsync();
+            }
+            //remove
+            var existingActorsDB = _context.Actors_Activities.Where(n => n.ActivityId == data.Id).ToList();
+            _context.Actors_Activities.RemoveRange(existingActorsDB);
+            await _context.SaveChangesAsync();
+            
+            //Add  Actors
+            foreach (var actorId in data.ActorIds)
+            {
+                var newActorActivity = new Actor_Activity()
+                {
+                    ActivityId = data.Id,
+                    ActorId = actorId
+                };
+                await _context.Actors_Activities.AddAsync(newActorActivity);
+            }
+            await _context.SaveChangesAsync();
         }
     }
 }
