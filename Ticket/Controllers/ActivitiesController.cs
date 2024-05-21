@@ -19,7 +19,18 @@ namespace Ticket.Controllers
             return View(allActivities);
         }
 
+        public async Task<IActionResult> Details (int id)
+        {
+            var activityDetail = await _service.GetActivityByIdAsync(id);
+            return View(activityDetail);    
+        }
 
+        public IActionResult Create()
+        {
+            ViewData["Welcome"] = "Welcome our store";
+            ViewBag.Description = "This is description";
+            return View();
+        }
 
     }
 }
