@@ -28,7 +28,7 @@ namespace Ticket.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Create([Bind("Logo, Name, Description")] Cinema cinema)
+        public async Task<IActionResult> Create([Bind("Logo, CinemaName, Description")] Cinema cinema)
         {
             if(!ModelState.IsValid) return View(cinema);
             await _service.AddAsync(cinema);
@@ -51,7 +51,7 @@ namespace Ticket.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Edit(int id,[Bind("Id,Logo, Name, Description")] Cinema cinema)
+        public async Task<IActionResult> Edit(int id,[Bind("Id,Logo, CinemaName, Description")] Cinema cinema)
         {
             if (!ModelState.IsValid) return View(cinema);
             await _service.UpdateAsync(id,cinema);

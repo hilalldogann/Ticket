@@ -14,7 +14,7 @@ namespace Ticket.Models
 
         [Display(Name = "Cinema Name")]
         [Required(ErrorMessage = "Cinema name is required")]
-        public string Name { get; set; }
+        public string CinemaName { get; set; }
 
         [Display(Name = "Description")]
         [Required(ErrorMessage = "Cinema description is required")]

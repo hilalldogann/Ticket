@@ -13,8 +13,6 @@ namespace Ticket.Data.Services
             _context = context;
                 
         }
-
-       
         public async Task AddNewActivityAsync(NewActivityVM data)
         {
             var newActivity = new Activity()
@@ -59,8 +57,8 @@ namespace Ticket.Data.Services
         {
             var response = new NewActivityDropdownsVM()
             {
-                Actors = await _context.Actors.OrderBy(n => n.Name).ToListAsync(),
-                Cinemas = await _context.Cinemas.OrderBy(n => n.Name).ToListAsync(),
+                Actors = await _context.Actors.OrderBy(n => n.FullName).ToListAsync(),
+                Cinemas = await _context.Cinemas.OrderBy(n => n.CinemaName).ToListAsync(),
                 Producers= await _context.Producers.OrderBy(n => n.Name).ToListAsync(),
 
             };

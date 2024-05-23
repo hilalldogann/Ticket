@@ -26,7 +26,7 @@ namespace Ticket.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("ProfilePictureURL,Name,Biography")] Actor actor)
+        public async Task<IActionResult> Create([Bind("ProfilePictureURL,FullName,Biography")] Actor actor)
         {
             if (!ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace Ticket.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,ProfilePictureURL,Biography")] Actor actor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Biography")] Actor actor)
         {
             if (!ModelState.IsValid)
             {

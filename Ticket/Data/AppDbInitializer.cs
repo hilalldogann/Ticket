@@ -19,42 +19,42 @@ namespace Ticket.Data
                     {
                         new Cinema()
                         {
-                            Name = "Cinema 1",
+                            CinemaName = "Cinema 1",
                             Logo = "https://www.google.com/search?q=cinema&sca_esv=c27bfc2d7e5ccc09&sca_upv=1&udm=2&biw=1366&bih=633&sxsrf=ACQVn0_wFYN8ZYJhBbWKJIIK-RBaY7UbsA%3A1713096207967&ei=D8YbZtvHOq_Bxc8P1ZeOqAU&ved=0ahUKEwibi8TX1MGFAxWvYPEDHdWLA1UQ4dUDCBA&uact=5&oq=cinema&gs_lp=Egxnd3Mtd2l6LXNlcnAiBmNpbmVtYTINEAAYgAQYigUYQxixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEj1EVAAWABwA3gAkAEAmAEAoAEAqgEAuAEDyAEAmAIDoAIMmAMAiAYBkgcBM6AHAA&sclient=gws-wiz-serp#vhid=sQ9lZmUfX6Dv1M&vssid=mosaic",
                             Description= "Description"
                         },
 
                         new Cinema()
                         {
-                            Name = "Cinema 1",
+                            CinemaName = "Cinema 1",
                             Logo = "https://www.google.com/search?q=cinema&sca_esv=c27bfc2d7e5ccc09&sca_upv=1&udm=2&biw=1366&bih=633&sxsrf=ACQVn0_wFYN8ZYJhBbWKJIIK-RBaY7UbsA%3A1713096207967&ei=D8YbZtvHOq_Bxc8P1ZeOqAU&ved=0ahUKEwibi8TX1MGFAxWvYPEDHdWLA1UQ4dUDCBA&uact=5&oq=cinema&gs_lp=Egxnd3Mtd2l6LXNlcnAiBmNpbmVtYTINEAAYgAQYigUYQxixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEj1EVAAWABwA3gAkAEAmAEAoAEAqgEAuAEDyAEAmAIDoAIMmAMAiAYBkgcBM6AHAA&sclient=gws-wiz-serp#vhid=sQ9lZmUfX6Dv1M&vssid=mosaic",
                             Description= "Description"
                         },
 
                         new Cinema()
                         {
-                            Name = "Cinema 2",
+                            CinemaName = "Cinema 2",
                             Logo = "https://www.google.com/search?q=cinema&sca_esv=c27bfc2d7e5ccc09&sca_upv=1&udm=2&biw=1366&bih=633&sxsrf=ACQVn0_wFYN8ZYJhBbWKJIIK-RBaY7UbsA%3A1713096207967&ei=D8YbZtvHOq_Bxc8P1ZeOqAU&ved=0ahUKEwibi8TX1MGFAxWvYPEDHdWLA1UQ4dUDCBA&uact=5&oq=cinema&gs_lp=Egxnd3Mtd2l6LXNlcnAiBmNpbmVtYTINEAAYgAQYigUYQxixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEj1EVAAWABwA3gAkAEAmAEAoAEAqgEAuAEDyAEAmAIDoAIMmAMAiAYBkgcBM6AHAA&sclient=gws-wiz-serp#vhid=sQ9lZmUfX6Dv1M&vssid=mosaic",
                             Description= "Description"
                         },
 
                         new Cinema()
                         {
-                            Name = "Cinema 3",
+                            CinemaName = "Cinema 3",
                             Logo = "https://www.google.com/search?q=cinema&sca_esv=c27bfc2d7e5ccc09&sca_upv=1&udm=2&biw=1366&bih=633&sxsrf=ACQVn0_wFYN8ZYJhBbWKJIIK-RBaY7UbsA%3A1713096207967&ei=D8YbZtvHOq_Bxc8P1ZeOqAU&ved=0ahUKEwibi8TX1MGFAxWvYPEDHdWLA1UQ4dUDCBA&uact=5&oq=cinema&gs_lp=Egxnd3Mtd2l6LXNlcnAiBmNpbmVtYTINEAAYgAQYigUYQxixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEj1EVAAWABwA3gAkAEAmAEAoAEAqgEAuAEDyAEAmAIDoAIMmAMAiAYBkgcBM6AHAA&sclient=gws-wiz-serp#vhid=sQ9lZmUfX6Dv1M&vssid=mosaic",
                             Description= "Description"
                         },
 
                         new Cinema()
                         {
-                            Name = "Cinema 4",
+                            CinemaName = "Cinema 4",
                             Logo = "https://www.google.com/search?q=cinema&sca_esv=c27bfc2d7e5ccc09&sca_upv=1&udm=2&biw=1366&bih=633&sxsrf=ACQVn0_wFYN8ZYJhBbWKJIIK-RBaY7UbsA%3A1713096207967&ei=D8YbZtvHOq_Bxc8P1ZeOqAU&ved=0ahUKEwibi8TX1MGFAxWvYPEDHdWLA1UQ4dUDCBA&uact=5&oq=cinema&gs_lp=Egxnd3Mtd2l6LXNlcnAiBmNpbmVtYTINEAAYgAQYigUYQxixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEj1EVAAWABwA3gAkAEAmAEAoAEAqgEAuAEDyAEAmAIDoAIMmAMAiAYBkgcBM6AHAA&sclient=gws-wiz-serp#vhid=sQ9lZmUfX6Dv1M&vssid=mosaic",
                             Description= "Description"
                         },
 
                         new Cinema()
                         {
-                            Name = "Cinema 5",
+                            CinemaName = "Cinema 5",
                             Logo = "https://www.google.com/search?q=cinema&sca_esv=c27bfc2d7e5ccc09&sca_upv=1&udm=2&biw=1366&bih=633&sxsrf=ACQVn0_wFYN8ZYJhBbWKJIIK-RBaY7UbsA%3A1713096207967&ei=D8YbZtvHOq_Bxc8P1ZeOqAU&ved=0ahUKEwibi8TX1MGFAxWvYPEDHdWLA1UQ4dUDCBA&uact=5&oq=cinema&gs_lp=Egxnd3Mtd2l6LXNlcnAiBmNpbmVtYTINEAAYgAQYigUYQxixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEj1EVAAWABwA3gAkAEAmAEAoAEAqgEAuAEDyAEAmAIDoAIMmAMAiAYBkgcBM6AHAA&sclient=gws-wiz-serp#vhid=sQ9lZmUfX6Dv1M&vssid=mosaic",
                             Description= "Description"
                         },
@@ -70,14 +70,14 @@ namespace Ticket.Data
                     { 
                         new Actor()
                         {
-                            Name="Actor 1",
+                            FullName="Actor 1",
                             Biography="1. aktörün biyografisi",
                             ProfilePictureURL=".....",
                         },
 
                         new Actor()
                         {
-                            Name="Actor 2",
+                            FullName="Actor 2",
                             Biography="2. aktörün biyografisi",
                             ProfilePictureURL=".....",
 
@@ -85,21 +85,21 @@ namespace Ticket.Data
 
                         new Actor()
                         {
-                            Name="Actor 3",
+                            FullName="Actor 3",
                             Biography="3. aktörün biyografisi",
                             ProfilePictureURL=".....",
                         },
 
                         new Actor() 
                         {
-                            Name="Actor 4",
+                            FullName="Actor 4",
                             Biography="4. aktörün biyografisi",
                             ProfilePictureURL=".....",
                         },
 
                         new Actor()
                         {
-                            Name="Actor 5",
+                            FullName="Actor 5",
                             Biography="5. aktörün biyografisi",
                             ProfilePictureURL=".....",
                         }

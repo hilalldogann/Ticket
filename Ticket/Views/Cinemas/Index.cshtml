@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.Logo)</th>
-                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.CinemaName)</th>
                     <th>@Html.DisplayNameFor(model => model.Description)</th>
                     <th>Actions</th>
                 </tr>
@@ -19,11 +19,11 @@
                 {
                     <tr>
                         <td class="align-middle">
-                            <img class="rounded-circle" src="@item.Logo" alt="@item.Name" style="max-width:150px" />
+                            <img class="rounded-circle" src="@item.Logo" alt="@item.CinemaName" style="max-width:150px" />
                         </td>
 
                         <td class="align-middle">
-                            @Html.DisplayFor(modelItem => item.Name)
+                            @Html.DisplayFor(modelItem => item.CinemaName)
                         </td>
 
                         <td class="align-middle">
