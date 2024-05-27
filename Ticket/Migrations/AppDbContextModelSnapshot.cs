@@ -164,13 +164,13 @@ namespace Ticket.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("ActivityId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
                     b.Property<int>("CinemaId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MovieId")
                         .HasColumnType("int");
 
                     b.Property<int>("OrderId")
@@ -182,6 +182,8 @@ namespace Ticket.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CinemaId");
+
+                    b.HasIndex("OrderId");
 
                     b.ToTable("OrderItems");
                 });
@@ -284,7 +286,7 @@ namespace Ticket.Migrations
 
                     b.HasOne("Ticket.Models.Order", "Order")
                         .WithMany("OrderItems")
-                        .HasForeignKey("CinemaId")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

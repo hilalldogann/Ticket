@@ -77,8 +77,8 @@ namespace Ticket.Data
 
                         new Actor()
                         {
-                            FullName="Actor 2",
-                            Biography="2. aktörün biyografisi",
+                            FullName="Leonardo DiCaprio",
+                            Biography="Görev Oyuncu , Yapımcı , İdari yapımcı Daha fazlası\r\nGerçek adı: Leonardo Wilhelm DiCaprio\r\nUyruk Amerikalı\r\nDoğum tarihi 11 Kasım 1974 (Los Angeles, Kaliforniya)\r\nYaş 49",
                             ProfilePictureURL=".....",
 
                         },

@@ -13,14 +13,14 @@ namespace Ticket.Models
 
         public double Price { get; set; }
 
-        public int MovieId { get; set; }
+        public int ActivityId { get; set; }
 
         [ForeignKey("CinemaId")]
         public Activity Activity { get; set; }
 
         public int OrderId { get; set; }
 
-        [ForeignKey("CinemaId")]
+        [ForeignKey("OrderId")]
         public Order Order { get; set; }
 
     }
