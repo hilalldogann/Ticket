@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ticket.Data;
@@ -15,28 +16,34 @@ namespace Ticket.Controllers
         { 
             _service = service;
         }
+
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var allActivities = await _service.GetAllAsync(n => n.Cinema);
-            return View(allActivities);
+            var allMovies = await _service.GetAllAsync(n => n.Cinema);
+            return View(allMovies);
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
             var allActivities = await _service.GetAllAsync(n => n.Cinema);
-           if (!string.IsNullOrEmpty(searchString))
-            {
-                var filteredResult = allActivities.Where(n => n.Name.Contains(searchString) || n.Description.Contains(searchString)).ToList();
 
-                return View("Index", filteredResult);  
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                //var filteredResult = allMovies.Where(n => n.Name.ToLower().Contains(searchString.ToLower()) || n.Description.ToLower().Contains(searchString.ToLower())).ToList();
+
+                var filteredResultNew = allActivities.Where(n => string.Equals(n.Name, searchString, StringComparison.CurrentCultureIgnoreCase) || string.Equals(n.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+                return View("Index", filteredResultNew);
             }
-            
-            
-            return View("Index",allActivities);
+
+            return View("Index", allActivities);
         }
 
 
 
+        [AllowAnonymous]
         public async Task<IActionResult> Details (int id)
         {
             var activityDetail = await _service.GetActivityByIdAsync(id);
@@ -60,11 +67,11 @@ namespace Ticket.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var movieDropdownsData = await _service.GetNewActivityDropdownsValues();
+                var activityDropdownsData = await _service.GetNewActivityDropdownsValues();
 
-                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+                ViewBag.Cinemas = new SelectList(activityDropdownsData.Cinemas, "Id", "Name");
+                ViewBag.Producers = new SelectList(activityDropdownsData.Producers, "Id", "FullName");
+                ViewBag.Actors = new SelectList(activityDropdownsData.Actors, "Id", "FullName");
 
                 return View(activity);
             }
@@ -120,11 +127,11 @@ namespace Ticket.Controllers
 
             if (!ModelState.IsValid)
             {
-                var movieDropdownsData = await _service.GetNewActivityDropdownsValues();
+                var activityDropdownsData = await _service.GetNewActivityDropdownsValues();
 
-                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+                ViewBag.Cinemas = new SelectList(activityDropdownsData.Cinemas, "Id", "Name");
+                ViewBag.Producers = new SelectList(activityDropdownsData.Producers, "Id", "FullName");
+                ViewBag.Actors = new SelectList(activityDropdownsData.Actors, "Id", "FullName");
 
                 return View(activity);
             }

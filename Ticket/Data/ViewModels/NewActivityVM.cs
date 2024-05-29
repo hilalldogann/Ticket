@@ -21,8 +21,8 @@ namespace Ticket.Models
         [Required(ErrorMessage = "Price is required")]
         public double Price { get; set; }
 
-        [Display(Name = "Movie Poster URL")]
-        [Required(ErrorMessage = "Movie poster is required")]
+        [Display(Name = "Activity Poster URL")]
+        [Required(ErrorMessage = "Activity poster is required")]
         public string ImageURL { get; set; }
 
         [Display(Name = "start date")]

@@ -34,31 +34,31 @@
                                 <a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels"></i>Cinemas</a>
                                 <a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-headset"></i>Producers</a>
                                 <a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-square"></i>Actors</a>
-
                             </div>
-
-
                         </li>
 
                     </ul>
-                    <form class="form-check-inline my-2 my-lg-0" asp-controller="Activities" asp-action="Filter" style="padding-right:25px;">
-                        <input name="searchString" type="text" class="form-control" placeholder="Search for a movie.." />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bg-info bi-search"></i></button>
+                    <form class="form-inline my-2 my-lg-0" asp-controller="Activities" asp-action="Filter" style="padding-right:25px;">
+                        <input name="searchString" type="text" class="form-control" placeholder="Search for an Activty.." />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>
 
                     <ul class="navbar-nav">
                         @await Component.InvokeAsync("ShoppingCartSummary")
                     </ul>
-
+                    
+                    <partial name="_Identity.cshtml"/>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container-fluid">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+         <main role="main" class="pb-3">
+               @RenderBody()
+         </main>
     </div>
+   
 
     <footer class="border-top footer text-muted">
         <div class="container">
