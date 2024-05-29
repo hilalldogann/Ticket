@@ -18,6 +18,6 @@ namespace Ticket.Models
         public string Biography { get; set; }
 
         //relation
-        public List<Activity> Activities { get; set; }
+        public List<Activity>? Activities { get; set; }
     }
 }

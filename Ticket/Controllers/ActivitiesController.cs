@@ -53,9 +53,9 @@ namespace Ticket.Controllers
         public async Task <IActionResult> Create()
         {
             var activitiesDropdownsData = await _service.GetNewActivityDropdownsValues();
-            ViewBag.Cinemas = new SelectList(activitiesDropdownsData.Cinemas, "Id", "Name");
+            ViewBag.Cinemas = new SelectList(activitiesDropdownsData.Cinemas, "Id", "CinemaName");
             ViewBag.Producers = new SelectList(activitiesDropdownsData.Producers, "Id", "Name");
-            ViewBag.Actors = new SelectList(activitiesDropdownsData.Actors, "Id", "Name");
+            ViewBag.Actors = new SelectList(activitiesDropdownsData.Actors, "Id", "FullName");
             
             return View();
         }

@@ -22,6 +22,6 @@ namespace Ticket.Models
         public string Biography { get; set; }
 
         //Relation
-        public List<Actor_Activity> Actors_Activities { get; set; }
+        public List<Actor_Activity>? Actors_Activities { get; set; }
     }
 }
